@@ -1,0 +1,18 @@
+/* FlatPaper 原版 1:1 全量核心样式表 */
+@import "./styles/flatpaper.css";
+
+/* 增强适配与辅助微调 */
+html, body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 保证路由平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}

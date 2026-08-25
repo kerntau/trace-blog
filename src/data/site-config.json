@@ -1,0 +1,261 @@
+{
+  "site": {
+    "title": "FlatPaper Blog",
+    "subtitle": "基于 Hexo 的 FlatPaper 主题演示",
+    "description": "FlatPaper 是一个面向个人写作的 Hexo 主题",
+    "author": "Aroes",
+    "language": "zh-CN",
+    "keywords": "Hexo, FlatPaper, Blog",
+    "timezone": "Asia/Shanghai",
+    "url": "http://example.com",
+    "permalink": ":year/:month/:day/:title/",
+    "permalink_defaults": null,
+    "pretty_urls": {
+      "trailing_index": true,
+      "trailing_html": true
+    },
+    "source_dir": "source",
+    "public_dir": "public",
+    "tag_dir": "tags",
+    "archive_dir": "archives",
+    "category_dir": "categories",
+    "code_dir": "downloads/code",
+    "i18n_dir": ":lang",
+    "skip_render": null,
+    "new_post_name": ":title.md",
+    "default_layout": "post",
+    "titlecase": false,
+    "external_link": {
+      "enable": true,
+      "field": "site",
+      "exclude": ""
+    },
+    "filename_case": 0,
+    "render_drafts": false,
+    "post_asset_folder": false,
+    "relative_link": false,
+    "future": true,
+    "syntax_highlighter": "highlight.js",
+    "highlight": {
+      "line_number": true,
+      "auto_detect": false,
+      "tab_replace": "",
+      "wrap": true,
+      "hljs": false
+    },
+    "prismjs": {
+      "preprocess": true,
+      "line_number": true,
+      "tab_replace": ""
+    },
+    "index_generator": {
+      "path": "",
+      "per_page": 10,
+      "order_by": "-date"
+    },
+    "default_category": "uncategorized",
+    "category_map": null,
+    "tag_map": null,
+    "meta_generator": true,
+    "date_format": "YYYY-MM-DD",
+    "time_format": "HH:mm:ss",
+    "updated_option": "mtime",
+    "per_page": 10,
+    "pagination_dir": "page",
+    "include": null,
+    "exclude": null,
+    "ignore": null,
+    "theme": "flatpaper",
+    "deploy": {
+      "type": ""
+    }
+  },
+  "theme": {
+    "menu": {
+      "首页": {
+        "link": "/",
+        "icon": "home"
+      },
+      "友链": {
+        "link": "/links/",
+        "icon": "link"
+      },
+      "关于": {
+        "link": "/about/",
+        "icon": "user"
+      },
+      "文章": {
+        "icon": "folder",
+        "item": {
+          "分类": {
+            "link": "/categories/",
+            "icon": "folder"
+          },
+          "标签": {
+            "link": "/tags/",
+            "icon": "tag"
+          },
+          "归档": {
+            "link": "/archives/",
+            "icon": "archive"
+          }
+        }
+      }
+    },
+    "profile": {
+      "role": "日常记录",
+      "bio": "介绍一下自己 — 一两句话，写写你想被别人记住的部分。",
+      "avatar": null,
+      "avatar_shape": "square",
+      "site_info": null,
+      "social": null,
+      "rss": {
+        "enable": true,
+        "path": "/atom.xml"
+      }
+    },
+    "background": {
+      "style": "default"
+    },
+    "accent_colors": [
+      {
+        "name": "经典蓝",
+        "value": "#40798C"
+      },
+      {
+        "name": "抹茶绿",
+        "value": "#5B8E7D"
+      },
+      {
+        "name": "暖木棕",
+        "value": "#8C5E48"
+      },
+      {
+        "name": "暮山紫",
+        "value": "#6E5D7E"
+      },
+      {
+        "name": "珊瑚粉",
+        "value": "#A85A65"
+      }
+    ],
+    "nav": {
+      "enable": false,
+      "menu": null
+    },
+    "welcome": {
+      "label": "今日份记录",
+      "title": "把日子，慢慢写下来",
+      "text": "生活不是每天都精彩，但总有值得收藏的片段。",
+      "cta_text": "开始阅读",
+      "cta_link": "archives/"
+    },
+    "home_hero": {
+      "enable": false,
+      "mobile_image": true,
+      "stickers": {
+        "enable": true,
+        "draggable": true
+      }
+    },
+    "excerpt_length": 96,
+    "random_posts": 5,
+    "random_posts_pool": 100,
+    "latest_posts": {
+      "enable": false,
+      "limit": 5
+    },
+    "related_posts": 4,
+    "post_top_img": {
+      "mode": null
+    },
+    "article": {
+      "strong_accent": true
+    },
+    "reactions": {
+      "custom": null
+    },
+    "search": {
+      "limit": 0
+    },
+    "tags": {
+      "style": "tape"
+    },
+    "links": {
+      "style": "tape"
+    },
+    "fcl": {
+      "friend_json": {
+        "enable": true,
+        "path": "friend.json"
+      }
+    },
+    "buttons": {
+      "style": "circle"
+    },
+    "featured": null,
+    "featured_autoplay": 5000,
+    "featured_image_zigzag": true,
+    "color": "green",
+    "tape": {
+      "enable": true
+    },
+    "footer": {
+      "left": "© {year} By {name}",
+      "powered": {
+        "enable": true,
+        "prefix": "Powered by Theme",
+        "name": "FlatPaper",
+        "link": "https://github.com/Homulilly/hexo-theme-flatpaper"
+      },
+      "links": null
+    },
+    "note": {
+      "style": "sticky",
+      "icons": true
+    },
+    "code": {
+      "theme": "simple"
+    },
+    "umami": {
+      "enable": false,
+      "host": null,
+      "website_id": null
+    },
+    "google_analytics": {
+      "enable": false,
+      "measurement_id": null
+    },
+    "adsense": {
+      "enable": false,
+      "client": null,
+      "account": false,
+      "slots": {
+        "post_top": null,
+        "post_bottom": null,
+        "sidebar": null
+      }
+    },
+    "comments": null,
+    "twikoo": {
+      "envId": null
+    },
+    "artalk": {
+      "server": null,
+      "site": null
+    },
+    "fancybox": {
+      "enable": true
+    },
+    "google_fonts": {
+      "enable": false,
+      "cdn": "https://fonts.googleapis.com",
+      "fonts": null,
+      "mono": null
+    },
+    "inject": {
+      "head": null,
+      "bottom": null
+    }
+  }
+}

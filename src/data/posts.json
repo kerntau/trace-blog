@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "flatpaper-guide",
+    "title": "FlatPaper 主题本地体验指南",
+    "date": "2026-08-25T18:00:00.000Z",
+    "categories": [
+      "开发笔记"
+    ],
+    "tags": [
+      "Hexo",
+      "FlatPaper",
+      "前端"
+    ],
+    "cover": "",
+    "featured": true,
+    "excerpt": "欢迎体验 FlatPaper 主题 FlatPaper 是一个面向个人写作的 Hexo 主题，具备柔和纸面纹理、扁平插画、便签与胶带条设计。 提示框展示 这是一个 info 类型的可折叠提示便签块。 这是 warning 类型的提示便签块。 这是 success 类型的提示便签块。 代码高亮 引用与列表 > 保持热爱，...",
+    "content": "\n# 欢迎体验 FlatPaper 主题\n\nFlatPaper 是一个面向个人写作的 Hexo 主题，具备柔和纸面纹理、扁平插画、便签与胶带条设计。\n\n## 提示框展示\n\n{% note info 提示信息 %}\n这是一个 info 类型的可折叠提示便签块。\n{% endnote %}\n\n{% note warning 注意事项 %}\n这是 warning 类型的提示便签块。\n{% endnote %}\n\n{% note success 成功提示 %}\n这是 success 类型的提示便签块。\n{% endnote %}\n\n## 代码高亮\n\n```javascript\nfunction greet(name) {\n  console.log(`Hello, ${name}! Welcome to FlatPaper.`);\n}\n\ngreet('Developer');\n```\n\n## 引用与列表\n\n> 保持热爱，奔赴山海。\n> 专注于写作与技术沉淀。\n\n- [x] 初始化 Hexo 站点\n- [x] 集成 FlatPaper 主题\n- [x] 本地运行调试\n",
+    "toc": [
+      {
+        "level": 1,
+        "text": "欢迎体验 FlatPaper 主题",
+        "id": "欢迎体验-flatpaper-主题"
+      },
+      {
+        "level": 2,
+        "text": "提示框展示",
+        "id": "提示框展示"
+      },
+      {
+        "level": 2,
+        "text": "代码高亮",
+        "id": "代码高亮"
+      },
+      {
+        "level": 2,
+        "text": "引用与列表",
+        "id": "引用与列表"
+      }
+    ]
+  },
+  {
+    "slug": "hello-world",
+    "title": "Hello World",
+    "date": "2026-08-25T10:22:30.733Z",
+    "categories": [],
+    "tags": [],
+    "cover": "",
+    "featured": false,
+    "excerpt": "Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troublesho...",
+    "content": "Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).\r\n\r\n## Quick Start\r\n\r\n### Create a new post\r\n\r\n``` bash\r\n$ hexo new \"My New Post\"\r\n```\r\n\r\nMore info: [Writing](https://hexo.io/docs/writing.html)\r\n\r\n### Run server\r\n\r\n``` bash\r\n$ hexo server\r\n```\r\n\r\nMore info: [Server](https://hexo.io/docs/server.html)\r\n\r\n### Generate static files\r\n\r\n``` bash\r\n$ hexo generate\r\n```\r\n\r\nMore info: [Generating](https://hexo.io/docs/generating.html)\r\n\r\n### Deploy to remote sites\r\n\r\n``` bash\r\n$ hexo deploy\r\n```\r\n\r\nMore info: [Deployment](https://hexo.io/docs/one-command-deployment.html)\r\n",
+    "toc": []
+  }
+]

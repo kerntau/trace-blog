@@ -1,0 +1,11 @@
+- group: 常用推荐
+  description: 优质技术与设计站点
+  items:
+    - name: FlatPaper Demo
+      url: https://flatpaper.nep.me/
+      avatar: https://flatpaper.nep.me/images/favicon.png
+      descr: A quiet paper-inspired Hexo theme.
+    - name: Homulilly
+      url: https://homulilly.com/
+      avatar: https://homulilly.com/images/avatar.jpg
+      descr: 主题作者个人博客

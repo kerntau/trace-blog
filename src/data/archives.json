@@ -1,0 +1,24 @@
+{
+  "2026": [
+    {
+      "slug": "flatpaper-guide",
+      "title": "FlatPaper 主题本地体验指南",
+      "date": "2026-08-25T18:00:00.000Z",
+      "categories": [
+        "开发笔记"
+      ],
+      "tags": [
+        "Hexo",
+        "FlatPaper",
+        "前端"
+      ]
+    },
+    {
+      "slug": "hello-world",
+      "title": "Hello World",
+      "date": "2026-08-25T10:22:30.733Z",
+      "categories": [],
+      "tags": []
+    }
+  ]
+}

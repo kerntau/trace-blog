@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "flatpaper-guide",
+    "title": "FlatPaper 主题本地体验指南",
+    "date": "2026-08-25T18:00:00.000Z",
+    "categories": [
+      "开发笔记"
+    ],
+    "tags": [
+      "Hexo",
+      "FlatPaper",
+      "前端"
+    ],
+    "excerpt": "欢迎体验 FlatPaper 主题 FlatPaper 是一个面向个人写作的 Hexo 主题，具备柔和纸面纹理、扁平插画、便签与胶带条设计。 提示框展示 这是一个 info 类型的可折叠提示便签块。 这是 warning 类型的提示便签块。 这是 success 类型的提示便签块。 代码高亮 引用与列表 > 保持热爱，..."
+  },
+  {
+    "slug": "hello-world",
+    "title": "Hello World",
+    "date": "2026-08-25T10:22:30.733Z",
+    "categories": [],
+    "tags": [],
+    "excerpt": "Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troublesho..."
+  }
+]
