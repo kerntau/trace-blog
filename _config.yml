@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: FlatPaper Blog
-subtitle: '基于 Hexo 的 FlatPaper 主题演示'
-description: 'FlatPaper 是一个面向个人写作的 Hexo 主题'
-keywords: Hexo, FlatPaper, Blog
-author: Aroes
+title: kerntau
+subtitle: '心中有景,花香满径'
+description: '个人技术博客与知识库，记录全栈开发、云原生、系统架构与工程实践心得。'
+keywords: kerntau, 全栈开发, 云原生, 系统架构, React 19, Rsbuild, Trace, SSG
+author: kerntau
 language: zh-CN
 timezone: Asia/Shanghai
 

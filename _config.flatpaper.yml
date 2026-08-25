@@ -50,58 +50,33 @@ background:
   style: default
 
 profile:
-  role: 日常记录
-  bio: 介绍一下自己 — 一两句话，写写你想被别人记住的部分。
-  # 头像图片路径（站点根的 source/ 目录下）。留空则使用 CSS 绘制的默认头像。
-  avatar:
+  role: 全栈工程师
+  bio: 心中有景,花香满径 | 全栈工程师与开源爱好者
+  # 头像图片路径（站点根的 source/ 或 public/ 目录下）
+  avatar: /avatar.webp
   # 头像图片形状：square（默认，原始方形）或 circle（应用圆形遮罩）
-  avatar_shape: square
+  avatar_shape: circle
   # Profile 卡片站点统计；为空或 false 隐藏，true 显示无链接，其他非空值渲染为链接
   site_info:
-    # posts: /archives/
-    # categories: /categories/
-    # tags: /tags/
+    posts: /archives/
+    categories: /categories/
+    tags: /tags/
   social:
-    # 内置图标（按键名自动匹配，大小写不敏感）。未加前缀时优先匹配 Lucide；
-    # Font Awesome Free 6 可写 fa-solid:trash-can / fa-regular:heart / fa-brands:github。
-    #   github, twitter, x, mail/email, rss,
-    #   steam, bilibili, youtube, facebook, instagram, telegram, weibo
-    # 写法 1：键 -> URL（按键名自动匹配图标）
-    # 默认不提供任何条目，避免主题默认值在站点配置中被"注释掉"后仍然显现。
-    # 在站点的 _config.flatpaper.yml 里按需启用：
-    # GitHub: https://github.com/yourname
-    # Twitter: https://twitter.com/yourname
-    # Email: mailto:you@example.com
-    # X: https://x.com/yourname
-    # YouTube: https://youtube.com/@yourchannel
-    # Bilibili: https://space.bilibili.com/12345
-    # Steam: https://steamcommunity.com/id/yourname
-    # Facebook: https://facebook.com/yourname
-    # Instagram: https://instagram.com/yourname
-    # Telegram: https://t.me/yourname
-    # Weibo: https://weibo.com/u/12345
-    # 写法 2：对象 -> 指定使用某个内置图标（用于自定义命名 / 别名）
-    # Mastodon:
-    #   url: https://mastodon.social/@yourname
-    #   icon: send
-    #   tooltip: 在 Mastodon 找我
-    # 写法 3：完全自定义 SVG —— 提供 <path>/<circle> 等子元素字符串，
-    # 容器视图框为 24x24，颜色用 currentColor
-    # 知乎:
-    #   url: https://www.zhihu.com/people/yourname
-    #   tooltip: 知乎主页
-    #   svg: '<path d="M2 2 L22 22"/>'
-  # 在 socials 区域追加一个 RSS 图标（需要装 hexo-generator-feed 并在站点 _config.yml 启用 feed）
+    GitHub: https://github.com/kerntau
+    Bilibili: https://space.bilibili.com/9655855
+    X: https://x.com/Kerntao
+    Email: mailto:hi@keru.in
+  # 在 socials 区域追加一个 RSS 图标
   rss:
     enable: true
     path: /atom.xml
 
 welcome:
-  label: 今日份记录
-  title: 把日子，慢慢写下来
-  text: 生活不是每天都精彩，但总有值得收藏的片段。
-  cta_text: 开始阅读
-  cta_link: archives/
+  label: 心中有景
+  title: 花香满径，在代码与文字间慢行
+  text: 个人技术博客与知识库，记录全栈开发、云原生、系统架构与工程实践心得。
+  cta_text: 浏览所有文章
+  cta_link: /archives/
   # 自定义封面图。留空则使用 CSS 绘制的山景默认图。
   # 支持站内相对路径（如 /images/welcome.jpg，放在站点 source/ 下）或绝对 URL。
   # image:
