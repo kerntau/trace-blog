@@ -83,29 +83,41 @@ if (fs.existsSync(THEME_CONFIG_FILE)) {
 }
 
 // 2. 读取友链数据
-let links = [
-  {
-    group: '常用推荐',
-    description: '优质技术与设计站点',
-    items: [
-      {
-        name: 'FlatPaper Demo',
-        url: 'https://flatpaper.nep.me/',
-        avatar: 'https://flatpaper.nep.me/images/favicon.png',
-        descr: 'A quiet paper-inspired Hexo theme.'
-      },
-      {
-        name: 'Homulilly',
-        url: 'https://homulilly.com/',
-        avatar: 'https://homulilly.com/images/avatar.jpg',
-        descr: '主题作者个人博客'
-      }
-    ]
-  }
-];
+let links = [];
 
+const friendsJsonFile = path.join(SOURCE_DATA_DIR, 'friends.json');
 const linksFile = path.join(SOURCE_DATA_DIR, 'links.yml');
-if (fs.existsSync(linksFile)) {
+
+if (fs.existsSync(friendsJsonFile)) {
+  try {
+    const raw = fs.readFileSync(friendsJsonFile, 'utf-8');
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      // 转换为标准友链分组格式
+      const items = parsed.map(item => ({
+        name: item.name,
+        url: item.link || item.url || '#',
+        avatar: item.avatar || '',
+        descr: item.desc || item.descr || ''
+      }));
+
+      links = [
+        {
+          group: '推荐伙伴',
+          description: '与我一路相伴、互相交流的技术与设计朋友们',
+          items: items.slice(0, 16)
+        },
+        {
+          group: '更多博友',
+          description: `全网技术同路人 (共 ${items.length} 位)`,
+          items: items.slice(16)
+        }
+      ];
+    }
+  } catch (err) {
+    console.warn('读取 friends.json 失败:', err);
+  }
+} else if (fs.existsSync(linksFile)) {
   try {
     const raw = fs.readFileSync(linksFile, 'utf-8');
     const parsed = yaml.load(raw);
@@ -115,6 +127,24 @@ if (fs.existsSync(linksFile)) {
   } catch (err) {
     console.warn('读取 links.yml 失败:', err);
   }
+}
+
+// 如果没有友链，提供默认展示
+if (links.length === 0) {
+  links = [
+    {
+      group: '常用推荐',
+      description: '优质技术与设计站点',
+      items: [
+        {
+          name: 'FlatPaper Demo',
+          url: 'https://flatpaper.nep.me/',
+          avatar: 'https://flatpaper.nep.me/images/favicon.png',
+          descr: 'A quiet paper-inspired Hexo theme.'
+        }
+      ]
+    }
+  ];
 }
 
 // 3. 提取文章 TOC 目录
@@ -151,7 +181,8 @@ if (fs.existsSync(SOURCE_POSTS_DIR)) {
     const rawContent = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(rawContent);
 
-    const slug = file.replace(/\.md$/, '');
+    // slug 优先使用 frontmatter.url
+    const slug = data.url || file.replace(/\.md$/, '');
     const title = data.title || slug;
     const dateStr = data.date ? new Date(data.date).toISOString() : new Date().toISOString();
     
@@ -159,13 +190,25 @@ if (fs.existsSync(SOURCE_POSTS_DIR)) {
     let categories = [];
     if (data.categories) {
       categories = Array.isArray(data.categories) ? data.categories : [data.categories];
+    } else if (data.category) {
+      categories = Array.isArray(data.category) ? data.category : [data.category];
     }
+    
     let tags = [];
     if (data.tags) {
       tags = Array.isArray(data.tags) ? data.tags : [data.tags];
     }
 
-    // 提取纯文本摘要 (前 150 字)
+    // 封面图处理 (兼容 cover 与 images 数组)
+    let cover = data.cover || '';
+    if (!cover && data.images) {
+      cover = Array.isArray(data.images) ? data.images[0] : data.images;
+    }
+
+    // 精选文章判断 (兼容 featured 与 recommend >= 90)
+    const featured = Boolean(data.featured || (data.recommend && Number(data.recommend) >= 90));
+
+    // 提取纯文本摘要 (前 160 字)
     const plainText = content
       .replace(/\{%[\s\S]*?%\}/g, '')
       .replace(/:::[\s\S]*?:::/g, '')
@@ -175,7 +218,7 @@ if (fs.existsSync(SOURCE_POSTS_DIR)) {
       .replace(/[*_~`]/g, '')
       .replace(/\s+/g, ' ')
       .trim();
-    const excerpt = data.description || (plainText.slice(0, 160) + (plainText.length > 160 ? '...' : ''));
+    const excerpt = data.summary || data.description || (plainText.slice(0, 160) + (plainText.length > 160 ? '...' : ''));
 
     const toc = extractTOC(content);
 
@@ -185,8 +228,8 @@ if (fs.existsSync(SOURCE_POSTS_DIR)) {
       date: dateStr,
       categories,
       tags,
-      cover: data.cover || '',
-      featured: Boolean(data.featured),
+      cover: cover || '',
+      featured,
       excerpt,
       content,
       toc
@@ -226,7 +269,21 @@ const searchIndex = posts.map(p => ({
   excerpt: p.excerpt
 }));
 
-// 7. 写入数据文件
+// 7. 读取并传递其它附加数据 (关于我、里程碑、动态等)
+const extraDataFiles = ['my.json', 'milestones.json', 'records.json', 'equipment.json'];
+for (const extraFile of extraDataFiles) {
+  const extraPath = path.join(SOURCE_DATA_DIR, extraFile);
+  if (fs.existsSync(extraPath)) {
+    try {
+      const content = fs.readFileSync(extraPath, 'utf-8');
+      fs.writeFileSync(path.join(OUTPUT_DATA_DIR, extraFile), content);
+    } catch (e) {
+      console.warn(`拷贝 ${extraFile} 失败:`, e);
+    }
+  }
+}
+
+// 8. 写入核心数据文件
 fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'posts.json'), JSON.stringify(posts, null, 2));
 fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'categories.json'), JSON.stringify(categoriesMap, null, 2));
 fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'tags.json'), JSON.stringify(tagsMap, null, 2));
@@ -235,4 +292,4 @@ fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'links.json'), JSON.stringify(links,
 fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'search-index.json'), JSON.stringify(searchIndex, null, 2));
 fs.writeFileSync(path.join(OUTPUT_DATA_DIR, 'site-config.json'), JSON.stringify({ site: siteConfig, theme: themeConfig }, null, 2));
 
-console.log(`[Content Builder] 成功生成数据: ${posts.length} 篇文章, ${Object.keys(categoriesMap).length} 个分类, ${Object.keys(tagsMap).length} 个标签。`);
+console.log(`[Content Builder] 成功生成数据: ${posts.length} 篇文章, ${Object.keys(categoriesMap).length} 个分类, ${Object.keys(tagsMap).length} 个标签, ${links.reduce((acc, g) => acc + g.items.length, 0)} 条友链。`);
