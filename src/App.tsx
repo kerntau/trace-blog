@@ -33,11 +33,14 @@ const AppLayout: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post/:slug" element={<PostDetailPage />} />
+        <Route path="/article/:slug" element={<PostDetailPage />} />
         <Route path="/archives" element={<ArchivesPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/tags" element={<TagsPage />} />
         <Route path="/links" element={<LinksPage />} />
+        <Route path="/friend" element={<LinksPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/my" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

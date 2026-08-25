@@ -152,28 +152,54 @@ export const SidebarProfile: React.FC = () => {
 
         {/* 社交链接 */}
         <div className="socials">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            data-tooltip="GitHub"
-          >
-            <Icon name="github" />
-          </a>
+          {profile.social?.GitHub && (
+            <a
+              href={profile.social.GitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              data-tooltip="GitHub"
+            >
+              <Icon name="github" />
+            </a>
+          )}
+          {profile.social?.Bilibili && (
+            <a
+              href={profile.social.Bilibili}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Bilibili"
+              data-tooltip="Bilibili"
+            >
+              <Icon name="play" />
+            </a>
+          )}
+          {profile.social?.X && (
+            <a
+              href={profile.social.X}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              data-tooltip="X (Twitter)"
+            >
+              <Icon name="twitter" />
+            </a>
+          )}
+          {profile.social?.Email && (
+            <a
+              href={profile.social.Email}
+              aria-label="Email"
+              data-tooltip="Email"
+            >
+              <Icon name="mail" />
+            </a>
+          )}
           <a
             href="/atom.xml"
             aria-label="RSS feed"
             data-tooltip="RSS feed"
           >
             <Icon name="rss" />
-          </a>
-          <a
-            href="mailto:contact@example.com"
-            aria-label="Email"
-            data-tooltip="Email"
-          >
-            <Icon name="mail" />
           </a>
         </div>
       </section>
