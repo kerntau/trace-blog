@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@rsbuild/core": "^1.2.14",
-    "@rsbuild/plugin-react": "^1.1.2",
+    "@rsbuild/plugin-react": "^2.1.0",
     "@tailwindcss/postcss": "^4.0.8",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.13.5",
