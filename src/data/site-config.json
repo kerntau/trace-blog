@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "FlatPaper Blog",
-    "subtitle": "基于 Hexo 的 FlatPaper 主题演示",
-    "description": "FlatPaper 是一个面向个人写作的 Hexo 主题",
-    "author": "Aroes",
+    "title": "kerntau",
+    "subtitle": "心中有景,花香满径",
+    "description": "个人技术博客与知识库，记录全栈开发、云原生、系统架构与工程实践心得。",
+    "author": "kerntau",
     "language": "zh-CN",
-    "keywords": "Hexo, FlatPaper, Blog",
+    "keywords": "kerntau, 全栈开发, 云原生, 系统架构, React 19, Rsbuild, Trace, SSG",
     "timezone": "Asia/Shanghai",
     "url": "http://example.com",
     "permalink": ":year/:month/:day/:title/",
@@ -103,12 +103,21 @@
       }
     },
     "profile": {
-      "role": "日常记录",
-      "bio": "介绍一下自己 — 一两句话，写写你想被别人记住的部分。",
-      "avatar": null,
-      "avatar_shape": "square",
-      "site_info": null,
-      "social": null,
+      "role": "全栈工程师",
+      "bio": "心中有景,花香满径 | 全栈工程师与开源爱好者",
+      "avatar": "/avatar.webp",
+      "avatar_shape": "circle",
+      "site_info": {
+        "posts": "/archives/",
+        "categories": "/categories/",
+        "tags": "/tags/"
+      },
+      "social": {
+        "GitHub": "https://github.com/kerntau",
+        "Bilibili": "https://space.bilibili.com/9655855",
+        "X": "https://x.com/Kerntao",
+        "Email": "mailto:hi@keru.in"
+      },
       "rss": {
         "enable": true,
         "path": "/atom.xml"
@@ -144,11 +153,11 @@
       "menu": null
     },
     "welcome": {
-      "label": "今日份记录",
-      "title": "把日子，慢慢写下来",
-      "text": "生活不是每天都精彩，但总有值得收藏的片段。",
-      "cta_text": "开始阅读",
-      "cta_link": "archives/"
+      "label": "心中有景",
+      "title": "花香满径，在代码与文字间慢行",
+      "text": "个人技术博客与知识库，记录全栈开发、云原生、系统架构与工程实践心得。",
+      "cta_text": "浏览所有文章",
+      "cta_link": "/archives/"
     },
     "home_hero": {
       "enable": false,
