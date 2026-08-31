@@ -23,7 +23,7 @@
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
-    "@rsbuild/core": "^1.2.14",
+    "@rsbuild/core": "^2.2.1",
     "@rsbuild/plugin-react": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.8",
     "@types/js-yaml": "^4.0.9",
