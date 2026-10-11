@@ -40,7 +40,7 @@ npm run build
 npm run preview
 ~~~
 
-_config.yml 中的 url 默认是示例值 http://example.com，部署前请替换为自己的 HTTPS 域名；不部署时不要把示例地址当作站点链接发布。
+_config.yml 中的 url 默认是示例域名，部署前请替换为自己的 HTTPS 域名；不部署时不要把示例地址当作站点链接发布。
 
 ## 写作
 
