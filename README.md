@@ -85,21 +85,6 @@ npm run preview
 
 提交前至少验证内容生成和生产构建。仓库配置中的 site URL 仍是示例值；部署到自有域名或 GitHub Pages 时，请先在 _config.yml 中改成实际地址。
 
-## 07. ENGINEERING CONTRACT // 工程协作契约
-
-- 新文章放入 source/_posts/，并提供可解析的 front matter。
-- 修改内容管线后同时运行 npm run content 与 npm run build。
-- 不提交生成目录中的本地缓存、密钥或个人部署配置。
-- 组件改动应保持 Markdown 语义、键盘导航和窄屏阅读体验。
-
-## 08. ROADMAP // 系统演进路线
-
-- [x] Hexo 风格内容目录与 front matter 解析。
-- [x] React 阅读页面与分类、标签入口。
-- [x] Rsbuild 开发和生产构建。
-- [ ] 增加内容 schema 校验与构建期错误提示。
-- [ ] 补充 RSS、站点地图和部署示例。
-
-## 09. LICENSE // 许可证
+## 07. LICENSE // 许可证
 
 仓库当前未附带独立 LICENSE 文件。对外发布或再分发前，请补充许可证并同步更新本节。
